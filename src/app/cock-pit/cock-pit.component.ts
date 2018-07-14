@@ -1,17 +1,26 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  ViewEncapsulation
+} from "@angular/core";
 
 @Component({
   selector: "app-cock-pit",
-  templateUrl: "./cock-pit.component.html"
+  templateUrl: "./cock-pit.component.html",
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class CockPitComponent implements OnInit {
   newServerName = "";
   newServerContent = "";
-  @Output()  serverCreated = new EventEmitter<{
+  @Output()
+  serverCreated = new EventEmitter<{
     serverName: string;
     serverContent: string;
   }>();
-  @Output()  blueprintCreated = new EventEmitter<{
+  @Output()
+  blueprintCreated = new EventEmitter<{
     serverName: string;
     serverContent: string;
   }>();
