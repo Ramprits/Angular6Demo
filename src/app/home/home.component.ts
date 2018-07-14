@@ -2,8 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.css"]
+  templateUrl: "./home.component.html"
 })
 export class HomeComponent implements OnInit {
   serverElements = [
@@ -16,4 +15,19 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  onServerAdded(serverData: { serverName: string; serverContent: string }) {
+    this.serverElements.push({
+      type: "server",
+      name: serverData.serverName,
+      content: serverData.serverContent
+    });
+  }
+  onBlueprintAdded(serverData: { serverName: string; serverContent: string }) {
+    this.serverElements.push({
+      type: "blueprint",
+      name: serverData.serverName,
+      content: serverData.serverContent
+    });
+  }
 }
