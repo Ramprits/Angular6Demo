@@ -8,6 +8,7 @@ import { ServerElementComponent } from "./server-element/server-element.componen
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { HomeComponent } from "./home/home.component";
 import { CockpitComponent } from "./cockpit/cockpit.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { CockpitComponent } from "./cockpit/cockpit.component";
     HomeComponent,
     CockpitComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule.forRoot()],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule.forRoot(), HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })

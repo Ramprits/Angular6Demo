@@ -1,9 +1,11 @@
 import {
   Component,
+  ViewChild,
   OnInit,
   Output,
   EventEmitter,
-  ViewEncapsulation
+  ViewEncapsulation,
+  ElementRef
 } from "@angular/core";
 
 @Component({
@@ -12,6 +14,7 @@ import {
   encapsulation: ViewEncapsulation.Emulated
 })
 export class CockPitComponent implements OnInit {
+  @ViewChild("newVCServerContent") newVCServerContent: ElementRef;
   newServerName = "";
   newServerContent = "";
   @Output()
@@ -25,16 +28,22 @@ export class CockPitComponent implements OnInit {
     serverContent: string;
   }>();
 
-  constructor() {}
+  constructor() {
+    console.log(this.newVCServerContent)
+  }
 
   ngOnInit() {}
-  onAddServer() {
+
+  onAddServer(serverInput: HTMLInputElement) {
     this.serverCreated.emit({
       serverName: this.newServerName,
-      serverContent: this.newServerContent
+      serverContent: this.newVCServerContent.nativeElement.Value
     });
   }
 
+  // onAddServer(nameInput: HTMLInputElement) {
+  //   console.log(this.newVCServerContent.nativeElement.Value);
+  // }
   onAddBlueprint() {
     this.blueprintCreated.emit({
       serverName: this.newServerName,
