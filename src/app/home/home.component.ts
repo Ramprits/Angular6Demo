@@ -1,10 +1,4 @@
-import { Component, OnInit } from "@angular/core";
-
-import * as $ from "jquery";
-import * as ganttData from "../../assets/example/data.js";
-import { Observable } from "rxjs";
-import { HttpClient } from "@angular/common/http";
-import { TagPlaceholder } from "@angular/compiler/src/i18n/i18n_ast";
+import { Component, OnInit, OnChanges, SimpleChanges } from "@angular/core";
 
 @Component({
   selector: "app-home",
@@ -15,7 +9,7 @@ export class HomeComponent implements OnInit {
     { type: "server", name: "test server", content: "test content server" },
     { type: "blueprint", name: "server", content: "content server" }
   ];
-  constructor(private http: HttpClient) {
+  constructor() {
     // $(document).ready(function() {
     //   $("#ganttChart").ganttView({
     //     data: ganttData,
@@ -61,7 +55,7 @@ export class HomeComponent implements OnInit {
     // });
   }
 
-
+  
   onServerAdded(serverData: { serverName: string; serverContent: string }) {
     this.serverElements.push({
       type: "server",

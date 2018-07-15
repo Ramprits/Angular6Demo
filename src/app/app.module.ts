@@ -9,6 +9,8 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { HomeComponent } from "./home/home.component";
 import { CockpitComponent } from "./cockpit/cockpit.component";
 import { HttpClientModule } from "@angular/common/http";
+import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
+import { NavigationComponent } from "./navigation/navigation.component";
 
 @NgModule({
   declarations: [
@@ -16,9 +18,17 @@ import { HttpClientModule } from "@angular/common/http";
     CockPitComponent,
     ServerElementComponent,
     HomeComponent,
-    CockpitComponent
+    CockpitComponent,
+    ShoppingListComponent,
+    NavigationComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule.forRoot(), HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    NgbModule.forRoot(),
+    HttpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

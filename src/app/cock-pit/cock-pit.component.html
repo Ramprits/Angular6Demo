@@ -14,10 +14,24 @@
         <button class="btn btn-primary mr-3" (click)="onAddServer($event)">Add Server</button>
         <button class="btn btn-primary" (click)="onAddBlueprint()">Add Server Blueprint</button>
       </div>
-      <pre>
-        {{serverElements|json}}
-      </pre>
+
     </div>
   </div>
 
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form method="post" action="">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input id="name" class="form-control" #nameForm type="text">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input id="password" class="form-control" type="password">
+      </div>
+      <button class="btn btn-primary btn-sm float-right" type="submit">Save</button>
+    </form>
+  </div>
 </div>

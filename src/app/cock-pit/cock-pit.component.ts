@@ -5,7 +5,9 @@ import {
   Output,
   EventEmitter,
   ViewEncapsulation,
-  ElementRef
+  ElementRef,
+  AfterViewInit,
+  AfterContentChecked
 } from "@angular/core";
 
 @Component({
@@ -13,9 +15,11 @@ import {
   templateUrl: "./cock-pit.component.html",
   encapsulation: ViewEncapsulation.Emulated
 })
-export class CockPitComponent implements OnInit {
+export class CockPitComponent
+  implements OnInit, AfterViewInit, AfterContentChecked {
   @ViewChild("newVCServerContent") newVCServerContent: ElementRef;
   newServerName = "";
+  interval;
   newServerContent = "";
   @Output()
   serverCreated = new EventEmitter<{
@@ -29,11 +33,20 @@ export class CockPitComponent implements OnInit {
   }>();
 
   constructor() {
-    console.log(this.newVCServerContent)
+    // this.interval = setInterval(() => {}, 1000);
+    // console.log('Intervate called =>'+this.interval);
   }
 
   ngOnInit() {}
-
+  ngAfterViewInit() {
+    console.log(
+      "ngAfterViewInit" + this.newVCServerContent.nativeElement.textContent
+    );
+  }
+  ngAfterContentChecked() {
+    console.log(this.newVCServerContent.nativeElement.textContent);
+  }
+  
   onAddServer(serverInput: HTMLInputElement) {
     this.serverCreated.emit({
       serverName: this.newServerName,
