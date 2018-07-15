@@ -1,29 +1,29 @@
 <div class="row">
-    <div class="col-md-6">
-      <h2>Cock-pit component !</h2>
-      <app-cock-pit (serverCreated)="onServerAdded($event)" (blueprintCreated)="onBlueprintAdded($event)"></app-cock-pit>
+  <div class="col-md-6">
+    <h2>Cock-pit component !</h2>
+    <app-cock-pit (serverCreated)="onServerAdded($event)" (blueprintCreated)="onBlueprintAdded($event)"></app-cock-pit>
 
-    </div>
-    <div class="col-md-6">
-      <h2> Server element component !</h2>
+  </div>
+  <div class="col-md-6">
+    <h2> Server element component !</h2>
 
-      <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement"></app-server-element>
-      <hr>
+    <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement"></app-server-element>
+    <hr>
 
-      <app-cockpit *ngFor="let serverElement of serverElements" [element]="serverElement"></app-cockpit>
-    </div>
+    <app-cockpit *ngFor="let serverElement of serverElements" [element]="serverElement"></app-cockpit>
+  </div>
 
 
   <hr>
 
 </div>
-<!-- <div class="row">
+<div class="row">
   <div class="col-md-10">
     <button type="submit" id="btn2">Click me</button>
     <div id="ganttChart">Guntt Chart</div>
     <br/>
     <br/>
     <div id="eventMessage"></div>
-   
+
   </div>
-</div> -->
+</div>
