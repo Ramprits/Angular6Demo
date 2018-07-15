@@ -1,21 +1,22 @@
 import { Component, OnInit } from "@angular/core";
 import { Ingredeant } from "./ingredeant";
+import { ShoppingListService } from "./shopping-list.service";
 
 @Component({
   selector: "app-shopping-list",
   templateUrl: "./shopping-list.component.html"
 })
 export class ShoppingListComponent implements OnInit {
-  shoppings = [
-    { id: 1, name: "Samsung s5", price: 50000 },
-    { id: 2, name: "Vovo s5", price: 50000 }
-  ];
+  shoppings: { id: number; name: string; price: number; }[];
+  
 
-  constructor() {}
+  constructor(private _sls : ShoppingListService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.shoppings = this._sls.shoppings;
+  }
 
   onItemAdded(ingridiant: Ingredeant) {
-    this.shoppings.push(ingridiant);
+    this._sls.shoppings.push(ingridiant);
   }
 }

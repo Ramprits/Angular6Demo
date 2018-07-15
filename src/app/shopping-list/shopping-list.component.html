@@ -9,7 +9,7 @@
   </div>
   <div class="col-md-6">
     <div [ngClass]="{odd: shopping.id % 2 == 0}" *ngFor="let shopping of shoppings">
-      <div class="card mt-2">
+      <div class="card mt-2" *ngIf="shopping.name">
         <div class="card-body">
           <h5 class="card-title">Name:{{shopping.name}}</h5>
           <p class="card-text">Price:{{shopping.price | currency}}</p>
@@ -17,4 +17,5 @@
       </div>
     </div>
   </div>
+  <p appBetterHighlight>Welcome to directive </p>
 </div>

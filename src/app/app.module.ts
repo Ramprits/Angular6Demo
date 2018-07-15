@@ -12,6 +12,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 import { NavigationComponent } from "./navigation/navigation.component";
 import { ShoppingEditComponent } from "./shopping-list/shopping-edit/shopping-edit.component";
+import { BasicDirective } from "./shared/basic.directive";
+import { BetterHighlightDirective } from "./shared/better-highlight.directive";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ShoppingEditComponent } from "./shopping-list/shopping-edit/shopping-ed
     CockpitComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    NavigationComponent
+    NavigationComponent,
+    BasicDirective,
+    BetterHighlightDirective
   ],
   imports: [
     BrowserModule,
