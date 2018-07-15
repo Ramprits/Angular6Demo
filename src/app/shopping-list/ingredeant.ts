@@ -1,8 +1,10 @@
 export class Ingredeant {
-  constructor(name: string, price: number) {
+  constructor(id: number, name: string, price: number) {
     this.name = name;
     this.price = price;
+    this.id = id;
   }
+  id: number;
   name: string;
   price: number;
 }

@@ -1,9 +1,14 @@
+<style>
+  .odd {
+    color: blue;
+  }
+</style>
 <div class="row">
   <div class="col-md-6">
     <app-shopping-edit (ingrediantAdded)="onItemAdded($event)"></app-shopping-edit>
   </div>
   <div class="col-md-6">
-    <div *ngFor="let shopping of shoppings">
+    <div [ngClass]="{odd: shopping.id % 2 == 0}" *ngFor="let shopping of shoppings">
       <div class="card mt-2">
         <div class="card-body">
           <h5 class="card-title">Name:{{shopping.name}}</h5>

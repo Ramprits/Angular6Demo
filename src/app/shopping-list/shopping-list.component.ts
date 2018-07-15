@@ -7,8 +7,8 @@ import { Ingredeant } from "./ingredeant";
 })
 export class ShoppingListComponent implements OnInit {
   shoppings = [
-    { name: "Samsung s5", price: 50000 },
-    { name: "Vovo s5", price: 50000 }
+    { id: 1, name: "Samsung s5", price: 50000 },
+    { id: 2, name: "Vovo s5", price: 50000 }
   ];
 
   constructor() {}
