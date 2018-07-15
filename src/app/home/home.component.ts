@@ -6,13 +6,16 @@ import * as $ from 'jquery'
   selector: "app-home",
   templateUrl: "./home.component.html"
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit , OnChanges{
   serverElements = [
     { type: "server", name: "test server", content: "test content server" },
     { type: "blueprint", name: "server", content: "content server" }
   ];
   constructor(private _hs: HomeService) {
    
+  }
+  ngOnChanges(){
+    
   }
 
   ngOnInit() {
