@@ -11,6 +11,19 @@ Databinding
 2: encapsulation: ViewEncapsulation.Native
 3: encapsulation: ViewEncapsulation.Emulated  default is Emulated
 
+Create LocalReference on html element
+<input type="text" #name ></input>
+So #name is local reference on element.
+You can pass value by local reference 
+
+onAdded(name: HTMLInputElement){
+console.log(name.value)
+}
+
+
+# Getting Access to the Template & DOM with @ViewChild
+
+@ViewChild("newVCServerContent") newVCServerContent: ElementRef;
 
 
 
