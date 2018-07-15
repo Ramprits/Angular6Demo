@@ -11,6 +11,7 @@ import { CockpitComponent } from "./cockpit/cockpit.component";
 import { HttpClientModule } from "@angular/common/http";
 import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 import { NavigationComponent } from "./navigation/navigation.component";
+import { ShoppingEditComponent } from "./shopping-list/shopping-edit/shopping-edit.component";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { NavigationComponent } from "./navigation/navigation.component";
     HomeComponent,
     CockpitComponent,
     ShoppingListComponent,
+    ShoppingEditComponent,
     NavigationComponent
   ],
   imports: [

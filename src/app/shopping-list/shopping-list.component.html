@@ -1,3 +1,15 @@
-<p>
-  shopping-list works!
-</p>
+<div class="row">
+  <div class="col-md-6">
+    <app-shopping-edit (ingrediantAdded)="onItemAdded($event)"></app-shopping-edit>
+  </div>
+  <div class="col-md-6">
+    <div *ngFor="let shopping of shoppings">
+      <div class="card mt-2">
+        <div class="card-body">
+          <h5 class="card-title">Name:{{shopping.name}}</h5>
+          <p class="card-text">Price:{{shopping.price | currency}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
