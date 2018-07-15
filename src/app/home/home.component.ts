@@ -16,12 +16,11 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    $(document).ready(function() {
-      $("#ganttChart").click(function() {
-        alert("Hello !");
-      });
-    });
-
+    // $(document).ready(function() {
+    //   $("#ganttChart").click(function() {
+    //     alert("Hello !");
+    //   });
+    // });
     $(document).ready(function() {
       $("#ganttChart").ganttView({
         data: this._hs.ganttData,
